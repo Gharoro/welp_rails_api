@@ -97,7 +97,7 @@ class ListingsController < ApplicationController
             success: true,
             message: "Found #{result.length} listings for your search",
             data: result
-        }
+        }, status: 200
     end
 
      # fetch all user only listings
@@ -107,6 +107,7 @@ class ListingsController < ApplicationController
             render json: {
                 success: true,
                 message: 'You do not have any listing yet.',
+                data: result,
                 count: result.length
             }, status: 200
         else 
